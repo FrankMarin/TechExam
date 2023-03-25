@@ -15,16 +15,43 @@ namespace ArrayManiupulation
             //Console.WriteLine(result[1,1]);
 
 
-           int[] array = GetPrimeNumbers(30);
+           //int[] array = GetPrimeNumbers(30);
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.WriteLine(array[i]);
-            }
+           // for (int i = 0; i < array.Length; i++)
+           // {
+           //     Console.WriteLine(array[i]);
+           // }
 
-            Console.WriteLine("Done");
+           // Console.WriteLine("Done");
+
+            Console.WriteLine(IsThisAPalindrome("RACECAR"));
 
         }
+
+        public static bool IsThisAPalindrome(string text)
+        {
+            if (string.IsNullOrEmpty(text))
+            {
+                return false;
+            }
+
+            int i = 0; // Here I mess with the 1 :(
+            int j = text.Length - 1;
+
+            while (i < j)
+                {
+                Console.WriteLine(text[i]);
+                Console.WriteLine(text[j]);
+
+                if (text[i++] != text[j--])
+                {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+
 
         public static int[] GetPrimeNumbers(int n)
         {
