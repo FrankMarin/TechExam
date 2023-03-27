@@ -24,8 +24,24 @@ namespace ArrayManiupulation
 
            // Console.WriteLine("Done");
 
-            Console.WriteLine(IsThisAPalindrome("RACECAR"));
+            //Console.WriteLine(IsThisAPalindrome("RACECAR"));
 
+            Console.WriteLine(IsPalindrome("RACE CAR"));
+
+        }
+
+        // Refactiginf code :(
+        public static bool IsPalindrome(string text)
+        {
+            string tempText = new string(text.Where(t => char.IsLetterOrDigit(t)).Select(char.ToLower) .ToArray());
+
+
+            Console.WriteLine(tempText);
+            Console.WriteLine(new string(tempText.Reverse().ToArray()));
+
+
+
+            return tempText == new string(tempText.Reverse().ToArray());
         }
 
         public static bool IsThisAPalindrome(string text)
@@ -55,7 +71,7 @@ namespace ArrayManiupulation
 
         public static int[] GetPrimeNumbers(int n)
         {
-            List<int> primes = new List<int>();
+            List<int> primes = new();
 
             for (int i = 0; i < n; i++)
             {
