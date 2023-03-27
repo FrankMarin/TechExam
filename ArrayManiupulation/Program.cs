@@ -30,16 +30,14 @@ namespace ArrayManiupulation
 
         }
 
-        // Refactiginf code :(
+        // Refactoring Code 03/27/2023
+        // Actually easy to undestand the reverse word instead to reading in 2 ways and work with a full sentense :(
         public static bool IsPalindrome(string text)
         {
             string tempText = new string(text.Where(t => char.IsLetterOrDigit(t)).Select(char.ToLower) .ToArray());
 
-
-            Console.WriteLine(tempText);
-            Console.WriteLine(new string(tempText.Reverse().ToArray()));
-
-
+            //Console.WriteLine(tempText);
+            //Console.WriteLine(new string(tempText.Reverse().ToArray()));
 
             return tempText == new string(tempText.Reverse().ToArray());
         }
@@ -82,6 +80,25 @@ namespace ArrayManiupulation
             }
 
             return primes.ToArray();
+        }
+
+        // Refactoring Code 03/27/2023
+        // Not so dark method about to increment in pairs or work with the floor :( Clean and easy mode to do not mess again with a technical interview
+        public static bool isPrimerNumber2(int number)
+        {
+            if (number < 2) return false;
+
+            int sqrt = (int)Math.Sqrt(number);
+
+            for (int i = 2; i < sqrt; i++)
+            {
+                if (number % i == 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         public static bool IsPrimeNumber(int number)
